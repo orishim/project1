@@ -56,17 +56,18 @@ func generateVanityAddress(pattern string) (*btcec.PublicKey, *btcec.PrivateKey,
   //check if address string contains pattern, store answer in boolean variable
   match, _ := regexp.MatchString((".*" + pattern + ".*"), addr.String())
   
-  //test print
-  fmt.Println(match)
-  
   //match found, return everything
   if match {
-    fmt.Println(match)
+    //true printout
+    fmt.Printf(match)
     return pub, priv, addr
   }
   
+    //false printout
+  fmt.Printf(match)
+  
   //match not found, run again
-  return generateVanityAddress(pattern string)
+  return generateVanityAddress(pattern)
 
 
 }
