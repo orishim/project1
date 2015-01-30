@@ -4,7 +4,6 @@ import (
 	"encoding/hex"
 	"fmt"
 	"log"
-	"bytes"
 	"regexp"
 	"github.com/btcsuite/btcec"
 	"github.com/btcsuite/btcnet"
@@ -59,12 +58,12 @@ func generateVanityAddress(pattern string) (*btcec.PublicKey, *btcec.PrivateKey,
   //match found, return everything
   if match {
     //true printout
-    fmt.Printf(match)
+    fmt.Printf("true")
     return pub, priv, addr
   }
   
     //false printout
-  fmt.Printf(match)
+  fmt.Printf("false")
   
   //match not found, run again
   return generateVanityAddress(pattern)
