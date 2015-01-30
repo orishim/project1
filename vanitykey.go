@@ -73,7 +73,7 @@ func generateVanityAddress(pattern string) (*btcec.PublicKey, *btcec.PrivateKey,
 
 func main() {
 
-  pub, priv, addr := generateVanityAddress("xy")
+  pub, priv, addr := generateVanityAddress("shim")
 
   fmt.Printf("This is a private key in hex:\t[%s]\n",
 		hex.EncodeToString(priv.Serialize()))
